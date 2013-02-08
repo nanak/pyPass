@@ -24,15 +24,16 @@ def getUUID():
     print(output)
 
 
-def hashSHA1():
-    h = hashlib.sha1()
-    s = u'Test'
-    h.update(s)
+def hashSHA1(prm):
+    sha = hashlib.sha1()
+    s = u'' + prm
+    sha.update(s)
     senc = s.encode('utf-8')
-    h.update(senc)
-    print(h.hexdigest())
+    sha.update(senc)
+    return sha.hexdigest()
 
-hashSHA1()
+prt = hashSHA1("Test")
+print(prt)
 
 # splited = str.partition('\n')
 # print [splited[0]]
