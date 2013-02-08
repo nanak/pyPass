@@ -4,6 +4,7 @@ generates a password based on UUID, ...
 '''
 
 from subprocess import call, Popen, PIPE
+import hashlib
 
 
 def getUUID():
@@ -24,7 +25,6 @@ def getUUID():
 
 
 def hashSHA1():
-    import hashlib
     h = hashlib.sha1()
     s = u'Test'
     h.update(s)
