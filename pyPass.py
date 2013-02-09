@@ -1,5 +1,5 @@
 '''
-generates a password based on UUID, ...
+generates unique passwords that are easily reproducible
 
 '''
 
@@ -27,7 +27,6 @@ def getUUID():
 def hashSHA1(prm):
     sha = hashlib.sha1()
     s = u'' + prm
-    sha.update(s)
     senc = s.encode('utf-8')
     sha.update(senc)
     return sha.hexdigest()
