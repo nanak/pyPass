@@ -26,7 +26,7 @@ def getUUID():
 
 def hashSHA1(prm):
     sha = hashlib.sha1()
-    s = u'' + prm
+    s = prm
     senc = s.encode('utf-8')
     sha.update(senc)
     return sha.hexdigest()
