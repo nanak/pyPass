@@ -8,7 +8,7 @@ import getpass
 
 
 def hashSHA1(prm):
-    return hashlib.sha1(prm.encode('utf-8'))
+    return hashlib.sha1(prm.encode('utf-8')).hexdigest()
 
 
 def inp():
