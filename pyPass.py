@@ -5,10 +5,13 @@ generates unique passwords that are easily reproducible
 
 import hashlib
 import getpass
+import base64
 
 
 def hashSHA1(prm):
-    return hashlib.sha1(prm.encode('utf-8')).hexdigest()
+    # return hashlib.sha1(prm.encode('utf-8')).hexdigest()
+    # base64 expects bytes, not hex
+    return hashlib.sha1(prm.encode('utf-8')).digest()
 
 
 def inp():
@@ -28,6 +31,9 @@ def inp():
 
 passw = hashSHA1(inp())
 print(passw)
+# Test of base 64 encoded password
+passw2 = base64.standard_b64encode(passw)
+print(passw2)
 
 # splited = str.partition('\n')
 # print [splited[0]]
