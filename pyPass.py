@@ -9,10 +9,12 @@ import getpass
 import base64
 
 
-def hashSHA1(prm):
-    # return hashlib.sha1(prm.encode('utf-8')).hexdigest()
-    # base64 expects bytes, not hex
-    return hashlib.sha1(prm.encode('utf-8')).digest()
+def hashSHA1(param):
+    # hash parameter with sha1 to bytestring
+    bytestring = hashlib.sha1(param.encode('utf-8')).digest()
+    # convert bytestring to utf-8 encoded string
+    utf8string = base64.standard_b64encode(bytestring).decode('utf-8')[:-1]
+    return utf8string
 
 
 def inp():
@@ -32,9 +34,3 @@ def inp():
 
 passw = hashSHA1(inp())
 print(passw)
-# Test of base 64 encoded password
-passw2 = base64.standard_b64encode(passw)
-print(passw2)
-
-# splited = str.partition('\n')
-# print [splited[0]]
