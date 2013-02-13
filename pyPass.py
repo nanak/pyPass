@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 generates unique passwords that are easily reproducible
 
