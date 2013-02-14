@@ -29,7 +29,6 @@ def inp():
             break
         else:
             print("Passwords did not match, try again")
-            pass
     return key_and_master
 
 passw = hashSHA1(inp())
