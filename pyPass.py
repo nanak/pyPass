@@ -6,7 +6,6 @@ generates unique passwords that are easily reproducible
 
 import hashlib
 import getpass
-import base64
 import transcode as tran
 
 DIGITS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/-_@.:,;!"§$%&/()=?üöäÜÖÄ'
