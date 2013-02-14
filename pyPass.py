@@ -9,10 +9,12 @@ import getpass
 import base64
 import transcode as tran
 
+DIGITS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/-_@.:,;!"§$%&/()=?üöäÜÖÄ'
+
 
 def hashSHA1(param):
 	# hash parameter with sha1 to bytestring
-	return hashlib.sha1(prm.encode('utf-8')).hexdigest()
+	return hashlib.sha1(param.encode('utf-8')).hexdigest()
 
 
 def inp():
@@ -30,4 +32,5 @@ def inp():
 	return key_and_master
 
 passw = hashSHA1(inp())
+passw = tran.transcode(passw, DIGITS, tran.BASE16_DIGITS)
 print(passw)
