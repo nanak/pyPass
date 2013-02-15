@@ -12,7 +12,7 @@ DIGITS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/-_@.:,
 
 
 def hashSHA1(param):
-	# hash parameter with sha1 to bytestring
+	# hash parameter with sha1 to hex encoded sting
 	return hashlib.sha1(param.encode('utf-8')).hexdigest()
 
 
