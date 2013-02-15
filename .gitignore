@@ -1,0 +1,9 @@
+# temp files
+*~
+*.swp
+
+# binaries
+*.pyc
+__pychache__
+__pychache__/*
+__pychache__/**
